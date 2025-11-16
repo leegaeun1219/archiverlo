@@ -1,0 +1,27 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+ul,ol{list-style-type:none;}
+a{color:#000;text-decoration:none;}	
+
+
+body { font-family:"맑은고딕"; 
+		font-size:14px; 
+		color:#000; 
+		line-height:24px;
+}
+
+#section1{
+	width:1200px;
+	margin:100px auto;
+	text-align:center;
+	
+	
+}
+
+#section1 h1{
+	height:100px;
+	font-size:72px;
+	padding:50px;
+	color:#001a4d;
+	
+}
