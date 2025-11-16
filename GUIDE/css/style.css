@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div img {
+  margin: 0 auto;
+  display: block;
+}
+
+.fixed {
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+}
+
+.fixed:hover {
+  opacity: 0.8;
+}
+
+.fixed2 {
+  position: fixed;
+  right: 100px;
+  bottom: 40px;
+}
+
+.fixed2:hover {
+  opacity: 0.8;
+}
+
+.video-row {
+  display: flex;
+  justify-content: center;
+  /* 가운데 정렬 */
+  flex-wrap: wrap;
+  /* 화면 작을 땐 자동 줄바꿈 */
+}
+
+/* 프레임 전체 */
+.video-frame {
+  position: relative;
+  width: 1320px; /* mbc8.png 너비와 같게 */
+  margin: 0 auto;
+}
+
+/* 배경 이미지 */
+.frame-bg {
+  width: 100%;
+  display: block;
+}
+
+/* 영상 공통 스타일 */
+.video-left,
+.video-right {
+  position: absolute;
+  width: 275px;
+  aspect-ratio: 9 / 16;  /* 세로형 비율로 명시 */
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* 왼쪽 영상 위치 */
+.video-left {
+  top: 33%;    /* 너가 원하는 위치에 맞게 숫자 조정 */
+  left: 26%;   /* 너가 원하는 위치에 맞게 숫자 조정 */
+}
+
+/* 오른쪽 영상 위치 */
+.video-right {
+  top: 33%;
+  right: 26%;
+}
