@@ -88,8 +88,8 @@ h4 {
 
 .col-md-12 .title{
     font-size: 20px;
-    font-weight: 300;
-    color: #000000;
+    font-weight: 500;
+    color: #7fb6ff;
 }
 
 .col-md- h1 span {
@@ -115,6 +115,7 @@ body {
     font-family: 'Pretendard', sans-serif;
     font-size: 14px;
     line-height: 24px;
+    color: #000000;
 }
 
 .size-50 {
