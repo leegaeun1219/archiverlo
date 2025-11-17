@@ -457,19 +457,20 @@
     <!--  main script  -->
     <script src="js/custom.js"></script>
 
-    <!-- mouse tralier -->
+    
+    <!-- 별 떨어지는 커서-->
     <script>
         let lastTrailTime = 0;
         const TRAIL_INTERVAL = 35;
         const MAX_STARS = 30;
 
-        document.addEventListener('mousemove', function (e) {
+        // 공통으로 쓰는 별 생성 함수
+        function createStar(x, y) {
             const now = performance.now();
             if (now - lastTrailTime < TRAIL_INTERVAL) return;
             lastTrailTime = now;
 
             const currentStars = document.querySelectorAll('.trail');
-
             if (currentStars.length > MAX_STARS) {
                 currentStars[0].remove();
             }
@@ -481,8 +482,8 @@
             const offsetX = (Math.random() - 0.5) * 12;
             const offsetY = (Math.random() - 0.5) * 12;
 
-            star.style.left = (e.clientX + offsetX) + 'px';
-            star.style.top = (e.clientY + offsetY) + 'px';
+            star.style.left = (x + offsetX) + 'px';
+            star.style.top = (y + offsetY) + 'px';
 
             const size = Math.random() * 0.3 + 0.9;
             star.style.transform = `translate(-50%, -50%) scale(${size})`;
@@ -492,8 +493,29 @@
             setTimeout(() => {
                 star.remove();
             }, 1000);
+        }
+
+        // PC: 마우스 움직일 때
+        document.addEventListener('mousemove', function (e) {
+            createStar(e.clientX, e.clientY);
         });
+
+        // 모바일: 손가락 대는 순간
+        document.addEventListener('touchstart', function (e) {
+            const t = e.touches[0];
+            if (!t) return;
+            createStar(t.clientX, t.clientY);
+        }, { passive: true });
+
+        // 모바일: 손가락 움직일 때
+        document.addEventListener('touchmove', function (e) {
+            const t = e.touches[0];
+            if (!t) return;
+            createStar(t.clientX, t.clientY);
+        }, { passive: true });
     </script>
+
+
 
     <!-- 갤러리 라이트박스 스크립트 (좌우 넘기기) -->
     <script>
@@ -569,5 +591,6 @@
     </script>
 
 </body>
+
 
 </html>
