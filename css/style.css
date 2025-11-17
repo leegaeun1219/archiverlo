@@ -1010,7 +1010,6 @@ a.active {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     background-color: #d196f1;
-
 }
 
 .timeline-event:hover .timeline-event-thumbnail {
@@ -1047,12 +1046,12 @@ a.active {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     background-color: rgb(102, 155, 229);
-    outline: 10px solid #ffffff;
+    /* outline: 10px solid #ffffff; */
     display: block;
     margin: 0.5em 0.5em 0.5em -0.5em;
     position: absolute;
-    top: 0;
-    left: 2em;
+    top: -6px;
+    left: 1em;
     width: 1em;
     height: 1em;
 }
