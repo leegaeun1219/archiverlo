@@ -81,6 +81,11 @@
                         <br>저는 창작의 진정한 가치를 느낍니다.
                     </div>
                 </div>
+                <!-- <div class="blog">
+                    <a href="https://m.blog.naver.com/PostList.naver?blogId=mimosadelicate&tab=1">
+                        <p>blog</p>
+                    </a>
+                </div> -->
             </div>
 
             <div class="col-md-6 about-img-div">
@@ -99,13 +104,13 @@
         <!-- 02. 메인 프로젝트 시작 -->
         <div class="container">
 
-            <div class="col-md-12">
+            <div class="col-md-12" data-aos="fade-up">
                 <h4>02</h4>
                 <h1 class="size-50"><span>Project<br>Showcase</span></h1>
             </div>
 
             <!-- 위 3개 폴더 -->
-            <div class="portfolio">
+            <div class="portfolio" data-aos="fade-up">
                 <!-- portfolio_filter -->
                 <div class="categories-grid wow fadeInLeft">
                     <nav class="categories">
@@ -117,7 +122,7 @@
                 <!-- portfolio_filter -->
 
                 <div class="col-md-12">
-                    <p class="title">SIGNATURE PROJECTS</p>
+                    <p class="title" data-aos="fade-up">SIGNATURE PROJECTS</p>
 
                     <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
 
@@ -224,7 +229,7 @@
             <!-- 위 3개 끝 -->
 
             <!-- 갤러리 시작! -->
-            <div class="col-md-12">
+            <div class="col-md-12" data-aos="fade-up">
 
                 <p class="title">VISUAL WORKS</p>
                 <p>브랜드의 개성과 무드를 기반으로 디자인한 SNS 비주얼 작업물들을 모아 구성했습니다.</p>
@@ -302,7 +307,7 @@
                             <h3>2024.12</h3>
                             <p>- TOEIC SPEAKING IH(150)</p>
                             <h3>2025.04</h3>
-                            <p>- 제2종 보통운전면허</p>
+                            <p>- 보통운전면허 2종</p>
                             <h3>2025.09</h3>
                             <p>- 웹디자인개발기능사</p>
                             <h3>2025.10</h3>
@@ -393,6 +398,11 @@
     </div>
     <!-- 푸터 끝 -->
 
+    <!-- 코끼리 호버 버튼 -->
+    <button id="toTopBtn" type="button" aria-label="장식 버튼">
+        <img class="ele-img ele-default" src="img/sad.png" alt="코끼리 기본">
+        <img class="ele-img ele-hover" src="img/happy.png" alt="코끼리 호버">
+    </button>
 
 
 
@@ -437,16 +447,16 @@
     </script>
 
 
-    <!-- ⭐ 별 떨어지는 커서 효과 -->
+    <!-- ⭐ 별 떨어지는 효과 스크립트 -->
     <script>
         // 마지막으로 별을 생성한 시간
         let lastTrailTime = 0;
 
         // 별 생성 간격(ms) – 너무 많이 생성되지 않도록 조절
-        const TRAIL_INTERVAL = 35;
+        const TRAIL_INTERVAL = 40;
 
         // 화면에 존재할 수 있는 별 최대 개수 (넘으면 오래된 별부터 삭제)
-        const MAX_STARS = 30;
+        const MAX_STARS = 35;
 
 
         /* ======================================================
@@ -597,6 +607,44 @@
             });
         });
     </script>
+
+    <!-- 코끼리 탑버튼 스크립트 -->
+
+
+    <script>
+        const btn = document.getElementById('toTopBtn');
+        const imgDefault = btn.querySelector('.ele-default');
+        const imgHover = btn.querySelector('.ele-hover');
+
+        // PC: 스크롤 내려가면 나타나기
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.add('is-visible');
+            } else {
+                btn.classList.remove('is-visible');
+            }
+        });
+
+        // PC & Mobile: 클릭하면 상단 이동
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 📱 Mobile: 터치 시 hover 효과 강제 적용
+        btn.addEventListener('touchstart', () => {
+            imgDefault.style.opacity = 0;
+            imgHover.style.opacity = 1;
+        }, { passive: true });
+
+        btn.addEventListener('touchend', () => {
+            imgDefault.style.opacity = 1;
+            imgHover.style.opacity = 0;
+        }, { passive: true });
+    </script>
+
+
+
+
 
 </body>
 
