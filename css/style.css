@@ -584,20 +584,23 @@ a.active {
     width: 100%;
     height: 10px;
     background: url("../img/purple.png") repeat-x center bottom;
-    background-size: contain; 
+    background-size: contain;
 }
 
 .section-border-2 {
     width: 100%;
     height: 10px;
     background: url("../img/purple2.png") repeat-x center top;
-    background-size: contain;  /* 너무 크게 튀지 않게 */
+    background-size: contain;
+    /* 너무 크게 튀지 않게 */
 }
+
 .section-border-3 {
     width: 100%;
     height: 30px;
     background: url("../img/blue.png") repeat-x center bottom;
-    background-size: contain;  /* 너무 크게 튀지 않게 */
+    background-size: contain;
+    /* 너무 크게 튀지 않게 */
 }
 
 .portfolio .categories-grid span {
@@ -1185,6 +1188,89 @@ a.active {
     height: auto;
 }
 
+/* ================ 코끼리 탑버튼 ================ */
+/* 코끼리 버튼 위치 */
+#toTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    width: 110px;
+    height: 110px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    z-index: 9998;
+}
+
+/* 두 이미지를 겹치기 */
+#toTopBtn .ele-img {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left: 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.15s ease;
+}
+
+/* 기본 이미지는 보이게 */
+#toTopBtn .ele-default {
+    opacity: 1;
+}
+
+/* 호버 이미지는 기본적으로 숨김 */
+#toTopBtn .ele-hover {
+    opacity: 0;
+}
+
+/* 호버했을 때 서로 교체 */
+#toTopBtn:hover .ele-default {
+    opacity: 0;
+}
+
+#toTopBtn:hover .ele-hover {
+    opacity: 1;
+}
+
+/* 스크롤 내려갔을 때만 버튼 보이게 */
+#toTopBtn.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* 모바일에서 조금 줄이기 */
+@media (max-width: 500px) {
+    #toTopBtn {
+        width: 80px;
+        height: 80px;
+        bottom: 18px;
+        right: 3px;
+    }
+}
+
+/* 모바일 터치 시 이미지 교체 */
+#toTopBtn.touch-active .ele-default {
+    opacity: 0;
+}
+
+#toTopBtn.touch-active .ele-hover {
+    opacity: 1;
+}
+
+
+/* ======= 코끼리 끝! ========= */
+
+
+
 
 /* 반응형 조정 */
 @media (max-width: 500px) {
@@ -1271,7 +1357,7 @@ a.active {
 
 .footer-text {
     position: absolute;
-    bottom: 80px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
@@ -1300,11 +1386,13 @@ textarea {
     }
 
     .footer-text span {
-        font-size: 34px;   /* Thank you for visiting! */
+        font-size: 34px;
+        /* Thank you for visiting! */
     }
 
     .footer-text {
-        font-size: 13px;   /* © 문장 */
+        font-size: 13px;
+        /* © 문장 */
         bottom: 75px;
     }
 }
@@ -1332,7 +1420,8 @@ textarea {
     }
 
     .footer-text span {
-        font-size: 24px;   /* 폰에서 덜 부담스럽게 */
+        font-size: 24px;
+        /* 폰에서 덜 부담스럽게 */
     }
 
     .footer-text {
@@ -1485,14 +1574,14 @@ textarea {
     position: fixed;
     pointer-events: none;
 
-    font-size: 21px;
+    font-size: 15px;
     /* 별 크기 */
     line-height: 2;
     color: rgba(71, 178, 255, 0.6);
 
     /* 시작 위치: 커서 위치 기준 */
     transform: translate(-50%, -50%) translateY(0);
-    animation: trail-fade 1.7s ease-out forwards;
+    animation: trail-fade 1.4s ease-out forwards;
     /* 꼬리를 길게 보이게 1초 */
     z-index: 9999;
 }
@@ -1501,7 +1590,7 @@ textarea {
 @keyframes trail-fade {
     0% {
         opacity: 0.8;
-        transform: translate(-50%, -50%) translateY(0) scale(1.2);
+        transform: translate(-50%, -50%) translateY(0) scale(1.4);
     }
 
     100% {
@@ -1510,4 +1599,3 @@ textarea {
         transform: translate(-50%, -50%) translateY(140px) scale(0);
     }
 }
-
