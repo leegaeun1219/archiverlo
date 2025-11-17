@@ -16,7 +16,7 @@
     - About section -
     - experience section -
     - projects section -
-    - Contact section -
+    - footer section -
     - Responsive media queries -
 */
 
@@ -37,6 +37,7 @@ font-family: 'Pretendard', serif;
     font-weight: 300;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
@@ -58,6 +59,13 @@ font-family: 'Pretendard', serif;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'YoonChoWooSan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
 
 
 /* typography
@@ -67,7 +75,7 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-size: 80px;
     line-height: 70px;
-    color: #91379d;
+    color: #384fb6;
 
 }
 
@@ -83,17 +91,17 @@ h4 {
 
 
 .col-md-12 h1 span {
-    color: #384fb6;
+    color: #91379d;
 }
 
-.col-md-12 .title{
-    font-size: 20px;
-    font-weight: 500;
-    color: #7fb6ff;
+.col-md-12 .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #292929;
 }
 
 .col-md- h1 span {
-    color: #384fb6;
+    color: #91379d;
 }
 
 h4:before {
@@ -481,7 +489,7 @@ a.active {
 ==================================================*/
 
 #about {
-    padding: 50px 0;
+    padding: 50px 0 60px 0;
 }
 
 #about span {
@@ -489,6 +497,8 @@ a.active {
     font-weight: 500;
     font-size: 16px;
 }
+
+
 
 .h {
     font-size: 15px;
@@ -565,16 +575,30 @@ a.active {
 ==================================================*/
 
 #projects {
-    background: #f8f8f8;
+    background-color: #f5e8ff;
     position: relative;
-    padding: 40px 0;
+    padding: 100px 0;
 }
 
-#pxrojects p {
-    font-size: 16px;
-    margin-bottom: 50px;
+.section-border {
+    width: 100%;
+    height: 10px;
+    background: url("/img/purple.png") repeat-x center bottom;
+    background-size: contain; 
 }
 
+.section-border-2 {
+    width: 100%;
+    height: 10px;
+    background: url("/img/purple2.png") repeat-x center top;
+    background-size: contain;  /* 너무 크게 튀지 않게 */
+}
+.section-border-3 {
+    width: 100%;
+    height: 30px;
+    background: url("/img/blue.png") repeat-x center bottom;
+    background-size: contain;  /* 너무 크게 튀지 않게 */
+}
 
 .portfolio .categories-grid span {
     font-size: 30px;
@@ -793,8 +817,9 @@ a.active {
 .square-card {
     display: block;
     width: 100%;
-    aspect-ratio: 4/5;    /* 사각형 비율 */
-    border-radius: 3px;    
+    aspect-ratio: 4/5;
+    /* 사각형 비율 */
+    border-radius: 3px;
     margin: 20px 0;
     overflow: hidden;
     position: relative;
@@ -815,9 +840,10 @@ a.active {
 }
 
 .square-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 정사각형 안에 꽉 채움 — 잘릴 수 있음 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 정사각형 안에 꽉 채움 — 잘릴 수 있음 */
 }
 
 .square-label {
@@ -836,7 +862,8 @@ a.active {
 /* 카드 자체를 클릭 가능하게 */
 .square-card {
     cursor: pointer;
-    position: relative; /* ::before 오버레이 기준 */
+    position: relative;
+    /* ::before 오버레이 기준 */
 }
 
 /* 어둡게 깔리는 오버레이 */
@@ -844,7 +871,8 @@ a.active {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* 검정색 반투명 */
+    background: rgba(0, 0, 0, 0.5);
+    /* 검정색 반투명 */
     opacity: 0;
     transition: opacity 0.25s ease;
     z-index: 1;
@@ -859,7 +887,8 @@ a.active {
 .square-inner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 정사각형 꽉 채우기 */
+    object-fit: cover;
+    /* 정사각형 꽉 채우기 */
     transition: transform 0.3s ease;
 }
 
@@ -871,7 +900,8 @@ a.active {
 
 .gallery-lightbox {
     position: fixed;
-    inset: 0; /* top/right/bottom/left: 0 */
+    inset: 0;
+    /* top/right/bottom/left: 0 */
     background: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
@@ -946,8 +976,8 @@ a.active {
 ==================================================*/
 
 #experience {
-    padding: 100px 0 30px;
-    background: #f4f4f4;
+    padding: 100px 0 0 0;
+    background: #ffffff;
 }
 
 .timeline {
@@ -1017,7 +1047,7 @@ a.active {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     background-color: rgb(102, 155, 229);
-    outline: 10px solid #f3f3f3;
+    outline: 10px solid #ffffff;
     display: block;
     margin: 0.5em 0.5em 0.5em -0.5em;
     position: absolute;
@@ -1047,7 +1077,8 @@ a.active {
 /* skill section
 ==================================================*/
 #skills {
-    padding: 125px 18px;
+    padding: 70px 18px;
+    background-color: rgb(226, 240, 255);
 }
 
 .skill-box {
@@ -1115,6 +1146,7 @@ a.active {
     background: rgb(102, 155, 229);
     /*bar 채워지는 color*/
     clip: rect(0, 75px, 150px, 0);
+    outline: rgb(255, 255, 255);
 }
 
 .skill-box>.skills-circle>ul>li>span.bar-circle-left {
@@ -1136,6 +1168,22 @@ a.active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* 엔딩 배너 */
+.end-banner {
+    width: 100%;
+    text-align: center;
+    /* 안의 img를 가운데 정렬 */
+    margin: 20px 0 10px;
+    /* 위아래 여백은 취향대로 조절해도 됨 */
+}
+
+.end-banner img {
+    display: inline-block;
+    max-width: 100%;
+    /* 화면보다 커지지 않게 */
+    height: auto;
 }
 
 
@@ -1203,182 +1251,108 @@ a.active {
 }
 
 
-.portfolio-padding {
-    padding: 50px 0;
-    border: none;
-
-}
-
-.portfolio-inner {
-    padding-bottom: 0 !important;
-    padding-top: 55px;
-}
-
-.modal-content {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
-}
-
 .popup-modal {
     background: #fff;
 }
 
-.close-popup-modal {
-    float: right;
-    margin: 20px;
-    font-size: 22px;
-    opacity: 0;
-    cursor: pointer;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -webkit-transition-delay: .6s;
-    transition-delay: .6s;
-    position: fixed;
-    z-index: 100000;
-    right: 14px;
-}
 
-.animatedModal-on .close-popup-modal {
-    opacity: 1;
-}
-
-.modal-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    line-height: 50px;
-}
-
-
-/* contact
+/* 푸터contact
 ==================================================*/
 
-#contact {
-    padding: 10px 0 30px 0;
-    background: #f4f4f4;
+#footer-banner {
+    background-color: rgb(226, 240, 255);
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-image: url('/img/1.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
 }
 
-#contact p {
-
-    font-weight: 700;
+.footer-text {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+    z-index: 10;
+    text-align: center;
+    line-height: 2;
 }
 
-#contact-form input,
-#contact-form textarea {
-    height: 50px;
-    margin-bottom: 10px;
-    border-radius: 0;
+.footer-text span {
+    font-family: 'YoonChoWooSan';
+    font-size: 34px;
 }
 
-#contact-form label {
-    display: block;
-    margin-bottom: .2em;
-    font-size: 13px;
-    line-height: 13px;
-    font-size: 1.3rem;
-    line-height: 1.3rem;
-    color: #000;
-}
-
-#contact-form label.error {
-    margin-top: 10px;
-    margin-bottom: 1em;
-    font-size: 12px;
-    line-height: 12px;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    color: #D33E43;
-    margin-left: 10px
-}
-
-#contact-form input[type="text"].error,
-#contact-form input[type="password"].error,
-#contact-form input[type="date"].error,
-#contact-form input[type="datetime"].error,
-#contact-form input[type="datetime-local"].error,
-#contact-form input[type="month"].error,
-#contact-form input[type="week"].error,
-#contact-form input[type="email"].error,
-#contact-form input[type="number"].error,
-#contact-form input[type="search"].error,
-#contact-form input[type="tel"].error,
-#contact-form input[type="time"].error,
-#contact-form input[type="url"].error,
-#contact-form textarea.error {
-    border-color: #D33E43
-}
 
 textarea {
     resize: none;
 }
 
-fieldset {
-    border: 0px;
-    margin: 0;
-    padding: 0
+/* ---------- footer 반응형 ---------- */
+
+/* 태블릿 정도 (가로 991px 이하) */
+@media (max-width: 991px) {
+    #footer-banner {
+        height: 340px;
+    }
+
+    .footer-text span {
+        font-size: 34px;   /* Thank you for visiting! */
+    }
+
+    .footer-text {
+        font-size: 13px;   /* © 문장 */
+        bottom: 75px;
+    }
 }
 
-.required {
-    color: #e9266d
+/* 작은 태블릿 ~ 큰 모바일 (가로 768px 이하) */
+@media (max-width: 768px) {
+    #footer-banner {
+        height: 310px;
+    }
+
+    .footer-text span {
+        font-size: 30px;
+    }
+
+    .footer-text {
+        font-size: 12px;
+        bottom: 70px;
+    }
 }
 
-#success,
-#error {
-    display: none
+/* 모바일 (가로 500px 이하) */
+@media (max-width: 500px) {
+    #footer-banner {
+        height: 280px;
+    }
+
+    .footer-text span {
+        font-size: 24px;   /* 폰에서 덜 부담스럽게 */
+    }
+
+    .footer-text {
+        font-size: 11px;
+        bottom: 65px;
+        line-height: 1.6;
+    }
 }
 
-#success p,
-#error p {
-    display: block;
-}
+/* 아주 작은 폰 (가로 380px 이하) – 옵션 */
+@media (max-width: 380px) {
+    .footer-text span {
+        font-size: 22px;
+    }
 
-#success p {
-    color: #425BB5;
-    font-size: 15px;
-    text-align: center;
-    padding: 10px;
-    border: 2px solid #425BB5;
-    margin-top: 10px;
-}
-
-#error p {
-    color: #D33E43;
-    font-size: 15px;
-    text-align: center;
-    padding: 10px;
-    border: 2px solid #D33E43;
-    margin-top: 10px;
-}
-
-#submit {
-    background-color: #425BB5;
-    color: #fff;
-    padding: 10px 40px;
-    border-radius: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-    width: 100%;
-}
-
-.social {
-    padding-left: 0;
-    list-style: none;
-    margin-top: 20px;
-}
-
-.social li {
-    float: left;
-}
-
-.social li a {
-    color: #333;
-    font-size: 35px;
-    margin-right: 15px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-}
-
-.social li a:hover {
-    color: #425BB5;
+    .footer-text {
+        font-size: 10px;
+        bottom: 60px;
+    }
 }
 
 
@@ -1506,42 +1480,20 @@ fieldset {
     clear: both;
 }
 
-/* .portfolio_item {
-    height:440px; 
-    overflow: hidden;
-}
-
-.clearfix{
-    height: 220px!important;
-} */
-
-.portfolio_bg {
-    background: url(../img/portfolio/01.jpg);
-}
-
-.category {
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 16px;
-    color: #ccc;
-}
-
-/* mouse trail effect */
-
 /* mouse trail effect */
 
 .trail {
     position: fixed;
     pointer-events: none;
 
-    font-size: 20px;
+    font-size: 21px;
     /* 별 크기 */
     line-height: 2;
     color: rgba(71, 178, 255, 0.6);
 
     /* 시작 위치: 커서 위치 기준 */
     transform: translate(-50%, -50%) translateY(0);
-    animation: trail-fade 1.3s ease-out forwards;
+    animation: trail-fade 1.7s ease-out forwards;
     /* 꼬리를 길게 보이게 1초 */
     z-index: 9999;
 }
@@ -1550,12 +1502,13 @@ fieldset {
 @keyframes trail-fade {
     0% {
         opacity: 0.8;
-        transform: translate(-50%, -50%) translateY(0) scale(1);
+        transform: translate(-50%, -50%) translateY(0) scale(1.2);
     }
 
     100% {
         opacity: 0;
         /* 아래로 많이 떨어지면서 살짝 작아지게 */
-        transform: translate(-50%, -50%) translateY(140px) scale(0.7);
+        transform: translate(-50%, -50%) translateY(140px) scale(0);
     }
 }
+
