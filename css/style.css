@@ -583,20 +583,20 @@ a.active {
 .section-border {
     width: 100%;
     height: 10px;
-    background: url("/img/purple.png") repeat-x center bottom;
+    background: url("../img/purple.png") repeat-x center bottom;
     background-size: contain; 
 }
 
 .section-border-2 {
     width: 100%;
     height: 10px;
-    background: url("/img/purple2.png") repeat-x center top;
+    background: url("../img/purple2.png") repeat-x center top;
     background-size: contain;  /* 너무 크게 튀지 않게 */
 }
 .section-border-3 {
     width: 100%;
     height: 30px;
-    background: url("/img/blue.png") repeat-x center bottom;
+    background: url("../img/blue.png") repeat-x center bottom;
     background-size: contain;  /* 너무 크게 튀지 않게 */
 }
 
@@ -1263,7 +1263,7 @@ a.active {
     position: relative;
     width: 100%;
     height: 380px;
-    background-image: url('/img/1.png');
+    background-image: url('../img/1.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
