@@ -48,9 +48,9 @@
     <!-- 헤더 끝 -->
 
     <!-- 비디오 배너 시작 -->
-    <div class="section" id="home" data-stellar-background-ratio="0.5">
+    <div class="section" id="home">
         <div id="video_wrap">
-            <video autoplay muted playsinline webkit-playsinline preload="auto">
+            <video autoplay muted playsinline webkit-playsinline preload="auto" id="homeVideo">
                 <source src="video/video.mp4" type="video/mp4">
             </video>
         </div>
@@ -92,9 +92,10 @@
     </div>
     <!-- 어바웃 끝 -->
 
+    <div class="section-border"></div>
+
     <!-- 프로젝트  시작 -->
     <div class="section" id="projects">
-
         <!-- 02. 메인 프로젝트 시작 -->
         <div class="container">
 
@@ -116,7 +117,7 @@
                 <!-- portfolio_filter -->
 
                 <div class="col-md-12">
-                    <p class="title">Signature Projects</p>
+                    <p class="title">SIGNATURE PROJECTS</p>
 
                     <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
 
@@ -225,7 +226,7 @@
             <!-- 갤러리 시작! -->
             <div class="col-md-12">
 
-                <p class="title">Visual Works</p>
+                <p class="title">VISUAL WORKS</p>
                 <p>브랜드의 개성과 무드를 기반으로 디자인한 SNS 비주얼 작업물들을 모아 구성했습니다.</p>
                 <!-- 작업물 시작 -->
                 <div class="row gallery-row">
@@ -277,7 +278,7 @@
     </div>
     <!-- 프로젝트 끝 -->
 
-
+    <div class="section-border-2"></div>
 
 
     <!-- 03. 여정 시작 -->
@@ -286,7 +287,7 @@
             <div class="col-md-4" data-aos="fade-up">
                 <h4>03</h4>
                 <h1 class="size-50">
-                    My<br/>Journey</h1>
+                    My<br />Journey</h1>
                 <div class="h-50"></div>
             </div>
 
@@ -328,7 +329,7 @@
                         <div class="timeline-event-copy">
                             <p class="timeline-event-thumbnail">EXPERIENCE</p>
                             <h3>2025.03 ~ 2025.06</h3>
-                                <p>- 부산 MBC 뉴미디어팀 인턴</p>
+                            <p>- 부산 MBC 뉴미디어팀 인턴</p>
 
 
                         </div>
@@ -340,6 +341,7 @@
     </div>
     <!-- 03. 여정 끝 -->
 
+    <div class="section-border-3"></div>
 
     <!-- 04. 스킬 시작 -->
     <div class="section" id="skills">
@@ -380,57 +382,21 @@
 
     <!-- 04. 스킬 끝 -->
 
+
     <!-- 푸터 시작 -->
-    <div class="section" id="contact">
-        <div class="container">
-            <div class="col-md-12">
-                <h1 class="size-50"></h1>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up">
-                <p>© 2025 Design By LEE GA EUN. All Rights Reserved.</p>
-            </div>
+    <div id="footer-banner">
+        <div class="footer-text">
+            <span>Thank you for visiting!</span>
+            <br>
+            © 2025 Design by Lee Ga Eun. All Rights Reserved.
         </div>
     </div>
-    <!-- 푸터 끝  -->
+    <!-- 푸터 끝 -->
 
 
 
-    <!--DEMO01-->
-    <div id="animatedModal" class="popup-modal">
-        <div id="btn-close-modal" class="close-animatedModal close-popup-modal">
-            <i class="ion-close-round"></i>
-        </div>
-        <div class="clearfix"></div>
-        <div class="modal-content">
-            <div class="container">
-                <div class="portfolio-padding">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>Geschäfts Eines<br /> Web-Studios</h2>
-                        <div class="h-50"></div>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge
-                            action items. Enthusiastically create seamless synergy rather than excellent
-                            value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge
-                            action items. Enthusiastically create seamless synergy rather than excellent
-                            value.</p>
-                        <br />
-                        <br /> <img src="img/portfolio/03.jpg" alt="" class="img-responsive" />
-                        <br />
-                        <br />
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge
-                            action items. Enthusiastically create seamless synergy rather than excellent
-                            value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge
-                            action items. Enthusiastically create seamless synergy rather than excellent
-                            value.</p>
-                        <br />
-                        <br />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <!-- @@ 기타 구현되는 효과들 @@  -->
 
     <!-- 갤러리 라이트박스 -->
     <div id="gallery-lightbox" class="gallery-lightbox">
@@ -457,62 +423,104 @@
     <!--  main script  -->
     <script src="js/custom.js"></script>
 
-    
-    <!-- 별 떨어지는 커서-->
+    <!-- 영상 배속 -->
     <script>
+        const homeVideo = document.getElementById("homeVideo");
+
+        // 반복 금지
+        homeVideo.removeAttribute("loop");
+
+        // 영상이 재생 준비되면 자동으로 배속 적용
+        homeVideo.addEventListener("loadeddata", () => {
+            homeVideo.playbackRate = 1.2;
+        });
+    </script>
+
+
+    <!-- ⭐ 별 떨어지는 커서 효과 -->
+    <script>
+        // 마지막으로 별을 생성한 시간
         let lastTrailTime = 0;
+
+        // 별 생성 간격(ms) – 너무 많이 생성되지 않도록 조절
         const TRAIL_INTERVAL = 35;
+
+        // 화면에 존재할 수 있는 별 최대 개수 (넘으면 오래된 별부터 삭제)
         const MAX_STARS = 30;
 
-        // 공통으로 쓰는 별 생성 함수
+
+        /* ======================================================
+           ✨ 공통 별 생성 함수 (PC/모바일 모두 여기서 생성)
+        ====================================================== */
         function createStar(x, y) {
             const now = performance.now();
+
+            // 1) 별 생성 간격 제한 → 너무 많이 나오지 않게 하는 장치
             if (now - lastTrailTime < TRAIL_INTERVAL) return;
             lastTrailTime = now;
 
+            // 2) 별 개수 제한 → 너무 많으면 첫 번째 별 제거
             const currentStars = document.querySelectorAll('.trail');
             if (currentStars.length > MAX_STARS) {
                 currentStars[0].remove();
             }
 
+            // 3) 새 별 요소 생성
             const star = document.createElement('div');
             star.className = 'trail';
             star.textContent = '☆';
 
+            // 4) 별이 약간 튀는 자연스러운 랜덤 오프셋
             const offsetX = (Math.random() - 0.5) * 12;
             const offsetY = (Math.random() - 0.5) * 12;
 
+            // 5) 별의 시작 위치 = 커서 + 약간 랜덤
             star.style.left = (x + offsetX) + 'px';
             star.style.top = (y + offsetY) + 'px';
 
+            // 6) 별의 크기 랜덤하게 (0.9~1.2배 정도)
             const size = Math.random() * 0.3 + 0.9;
             star.style.transform = `translate(-50%, -50%) scale(${size})`;
 
+            // 7) 별을 화면에 추가
             document.body.appendChild(star);
 
+            // 8) 애니메이션 끝나면 자동 삭제
             setTimeout(() => {
                 star.remove();
-            }, 1000);
+            }, 1500);
         }
 
-        // PC: 마우스 움직일 때
+
+
+        /* ======================================================
+           ✨ PC 버전 – 마우스 움직일 때 별 생성
+        ====================================================== */
         document.addEventListener('mousemove', function (e) {
             createStar(e.clientX, e.clientY);
         });
 
-        // 모바일: 손가락 대는 순간
+
+
+        /* ======================================================
+           ✨ 모바일 버전 – 손가락 터치 시 별 생성
+        ====================================================== */
         document.addEventListener('touchstart', function (e) {
             const t = e.touches[0];
             if (!t) return;
             createStar(t.clientX, t.clientY);
         }, { passive: true });
 
-        // 모바일: 손가락 움직일 때
+
+        /* ======================================================
+           ✨ 모바일 버전 – 손가락 이동 시 별 계속 생성
+        ====================================================== */
         document.addEventListener('touchmove', function (e) {
             const t = e.touches[0];
             if (!t) return;
             createStar(t.clientX, t.clientY);
         }, { passive: true });
+
     </script>
 
 
@@ -591,6 +599,5 @@
     </script>
 
 </body>
-
 
 </html>
