@@ -122,7 +122,7 @@ h4:before {
 body {
     font-family: 'Pretendard', sans-serif;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 20px;
     color: #000000;
 }
 
@@ -489,7 +489,7 @@ a.active {
 ==================================================*/
 
 #about {
-    padding: 50px 0 60px 0;
+    padding: 70px 0 60px 0;
 }
 
 #about span {
@@ -497,8 +497,6 @@ a.active {
     font-weight: 500;
     font-size: 16px;
 }
-
-
 
 .h {
     font-size: 15px;
@@ -551,7 +549,12 @@ a.active {
     z-index: 9;
 }
 
-.blog {
+.house{
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+/* .blog {
     margin-top: 20px;
 }
 
@@ -569,7 +572,7 @@ a.active {
 .blog p:hover {
     color: white;
     background-color: #d091e9;
-}
+} */
 
 /* projects section
 ==================================================*/
@@ -692,10 +695,10 @@ a.active {
     left: 0;
     width: 100%;
     padding: 21px 30px;
-    font-size: 21px;
-    font-weight: 300;
+    font-size: 19px;
+    font-weight: 500;
     text-align: center;
-    color: #333;
+    color: #000000;
     background: #fff;
     border-radius: 0 0 20px 20px;
     display: flex;
@@ -1079,7 +1082,7 @@ a.active {
 /* skill section
 ==================================================*/
 #skills {
-    padding: 70px 18px;
+    padding: 60px 18px;
     background-color: rgb(226, 240, 255);
 }
 
@@ -1172,104 +1175,14 @@ a.active {
     transform: translate(-50%, -50%);
 }
 
-/* 엔딩 배너 */
-.end-banner {
-    width: 100%;
-    text-align: center;
-    /* 안의 img를 가운데 정렬 */
-    margin: 20px 0 10px;
-    /* 위아래 여백은 취향대로 조절해도 됨 */
-}
-
-.end-banner img {
-    display: inline-block;
-    max-width: 100%;
-    /* 화면보다 커지지 않게 */
-    height: auto;
-}
-
-/* ================ 코끼리 탑버튼 ================ */
-/* 코끼리 버튼 위치 */
-#toTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 0;
-    width: 110px;
-    height: 110px;
-    padding: 0;
-    border: none;
+.skills-line {
+    width: 1200px;                 /* 🔥 폭 고정 */
+    height: 0;
+    border-top: 0.5px solid #bfbfbf;
+    margin: 40px auto;            /* 가운데 정렬 */
     background: transparent;
-    cursor: pointer;
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(8px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-
-    z-index: 9998;
+    margin-top: 200px;
 }
-
-/* 두 이미지를 겹치기 */
-#toTopBtn .ele-img {
-    position: absolute;
-    inset: 0;
-    /* top/right/bottom/left: 0 */
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: opacity 0.15s ease;
-}
-
-/* 기본 이미지는 보이게 */
-#toTopBtn .ele-default {
-    opacity: 1;
-}
-
-/* 호버 이미지는 기본적으로 숨김 */
-#toTopBtn .ele-hover {
-    opacity: 0;
-}
-
-/* 호버했을 때 서로 교체 */
-#toTopBtn:hover .ele-default {
-    opacity: 0;
-}
-
-#toTopBtn:hover .ele-hover {
-    opacity: 1;
-}
-
-/* 스크롤 내려갔을 때만 버튼 보이게 */
-#toTopBtn.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-/* 모바일에서 조금 줄이기 */
-@media (max-width: 500px) {
-    #toTopBtn {
-        width: 80px;
-        height: 80px;
-        bottom: 18px;
-        right: 3px;
-    }
-}
-
-/* 모바일 터치 시 이미지 교체 */
-#toTopBtn.touch-active .ele-default {
-    opacity: 0;
-}
-
-#toTopBtn.touch-active .ele-hover {
-    opacity: 1;
-}
-
-
-/* ======= 코끼리 끝! ========= */
-
-
 
 
 /* 반응형 조정 */
@@ -1335,76 +1248,69 @@ a.active {
     text-align: center;
 }
 
-
 .popup-modal {
     background: #fff;
 }
 
 
-/* 푸터contact
+/* 푸터 배너
 ==================================================*/
 
-#footer-banner {
-    background-color: rgb(226, 240, 255);
-    position: relative;
+#footer {
     width: 100%;
-    height: 380px;
-    background-image: url('../img/1.png');
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: contain;
+    background-color: rgb(226, 240, 255);
+    /* background-color: pink; */
+
+    /* 중앙 정렬용 flex */
+    display: flex;
+    align-items: center;             /* 세로 가운데 */
+    justify-content: center;         /* 가로 가운데 */
+
+    padding: 40px 16px 100px 0;              /* 여유 패딩 */
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .footer-text {
-    position: absolute;
-    bottom: 75px;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 14px;
     color: #333;
-    z-index: 10;
-    text-align: center;
-    line-height: 2;
+    line-height: 1.6;
 }
 
 .footer-text span {
+    font-size: 35px;
     font-family: 'YoonChoWooSan';
-    font-size: 34px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
 }
 
-
-textarea {
-    resize: none;
-}
 
 /* ---------- footer 반응형 ---------- */
 
 /* 태블릿 정도 (가로 991px 이하) */
 @media (max-width: 991px) {
-    #footer-banner {
-        height: 340px;
+
+    .skills-line{
+        display: none;
     }
 
     .footer-text span {
-        font-size: 34px;
+        font-size: 30px;
         /* Thank you for visiting! */
     }
 
     .footer-text {
         font-size: 13px;
-        /* © 문장 */
         bottom: 75px;
     }
 }
 
 /* 작은 태블릿 ~ 큰 모바일 (가로 768px 이하) */
 @media (max-width: 768px) {
-    #footer-banner {
-        height: 310px;
-    }
 
     .footer-text span {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .footer-text {
@@ -1415,17 +1321,15 @@ textarea {
 
 /* 모바일 (가로 500px 이하) */
 @media (max-width: 500px) {
-    #footer-banner {
-        height: 280px;
-    }
+
 
     .footer-text span {
-        font-size: 24px;
+        font-size: 20px;
         /* 폰에서 덜 부담스럽게 */
     }
 
     .footer-text {
-        font-size: 11px;
+        font-size: 9px;
         bottom: 65px;
         line-height: 1.6;
     }
@@ -1568,20 +1472,76 @@ textarea {
     clear: both;
 }
 
-/* mouse trail effect */
+
+/* ================ TOP 버튼 ================ */
+
+#toTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    /* height: 90px; */
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    z-index: 9998;
+}
+
+/* 안에 들어가는 아이콘 이미지 */
+#toTopBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 스크롤 내려갔을 때만 버튼 보이게 */
+#toTopBtn.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* 모바일에서 조금 줄이기 */
+@media (max-width: 500px) {
+    #toTopBtn {
+        width: 70px;
+        height: 70px;
+        bottom: 18px;
+        right: 3px;
+    }
+}
+
+#toTopBtn:hover {
+    transform: translateY(0) translateY(-3px);
+}
+
+/* ================ TOP 버튼 끝 ================ */
+
+
+
+
+/* ================ 마우스 별효과 시작 ================ */
 
 .trail {
     position: fixed;
     pointer-events: none;
 
-    font-size: 15px;
+    font-size: 17px;
     /* 별 크기 */
-    line-height: 2;
-    color: rgba(71, 178, 255, 0.6);
+    line-height: 10;
+    color: rgb(162, 198, 255);
 
     /* 시작 위치: 커서 위치 기준 */
     transform: translate(-50%, -50%) translateY(0);
-    animation: trail-fade 1.4s ease-out forwards;
+    animation: trail-fade 0.8s ease-out forwards;
     /* 꼬리를 길게 보이게 1초 */
     z-index: 9999;
 }
@@ -1589,13 +1549,15 @@ textarea {
 /* 커서를 따라 내려가는 긴 꼬리 */
 @keyframes trail-fade {
     0% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) translateY(0) scale(1.4);
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0) scale(1.5);
     }
 
     100% {
         opacity: 0;
         /* 아래로 많이 떨어지면서 살짝 작아지게 */
-        transform: translate(-50%, -50%) translateY(140px) scale(0);
+        transform: translate(-50%, -50%) translateY(80px) scale(0.2);
     }
 }
+
+/* ================ 마우스 별효과 끝 ================ */
