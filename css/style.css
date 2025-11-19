@@ -95,8 +95,8 @@ h4 {
 }
 
 .col-md-12 .title {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 550;
     color: #292929;
 }
 
@@ -121,7 +121,7 @@ h4:before {
 
 body {
     font-family: 'Pretendard', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 25px;
     color: #000000;
 }
@@ -493,14 +493,14 @@ a.active {
 }
 
 #about span {
-    color: #c38ada;
+    color: #d191ea;
     font-weight: 500;
     font-size: 16px;
 }
 
 .h {
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 450;
     padding: 20px 0 25px 0;
     line-height: 27px;
 }
@@ -511,7 +511,7 @@ a.active {
 }
 
 .h-2 {
-    font-weight: 400;
+    font-weight: 450;
     margin-bottom: 30px;
 }
 
@@ -549,7 +549,7 @@ a.active {
     z-index: 9;
 }
 
-.house{
+.house {
     width: 40px;
     margin-bottom: 15px;
 }
@@ -1037,7 +1037,7 @@ a.active {
 }
 
 .timeline-event-copy p {
-    font-size: 15px;
+    font-size: 15.5px;
 }
 
 .timeline-event-copy p:not(.timeline-event-thumbnail) {
@@ -1176,10 +1176,12 @@ a.active {
 }
 
 .skills-line {
-    width: 1200px;                 /* 🔥 폭 고정 */
+    width: 1200px;
+    /* 🔥 폭 고정 */
     height: 0;
-    border-top: 0.5px solid #bfbfbf;
-    margin: 40px auto;            /* 가운데 정렬 */
+    border-top: 0.5px solid #2a4670;
+    margin: 40px auto;
+    /* 가운데 정렬 */
     background: transparent;
     margin-top: 200px;
 }
@@ -1263,10 +1265,13 @@ a.active {
 
     /* 중앙 정렬용 flex */
     display: flex;
-    align-items: center;       /* 세로 가운데 */
-    justify-content: center;   /* 가로 가운데 */
+    align-items: center;
+    /* 세로 가운데 */
+    justify-content: center;
+    /* 가로 가운데 */
 
-    padding: 0px 16px 100px 0;      /* 여유 패딩 */
+    padding: 0px 16px 100px 0;
+    /* 여유 패딩 */
     box-sizing: border-box;
     text-align: center;
 }
@@ -1278,7 +1283,7 @@ a.active {
 }
 
 .footer-text span {
-    font-size: 28px;
+    font-size: 32px;
     font-family: 'YoonChoWooSan';
     font-weight: 500;
     display: block;
@@ -1291,7 +1296,7 @@ a.active {
 /* 태블릿 정도 (가로 991px 이하) */
 @media (max-width: 991px) {
 
-    .skills-line{
+    .skills-line {
         display: none;
     }
 
@@ -1310,7 +1315,7 @@ a.active {
 @media (max-width: 768px) {
 
     .footer-text span {
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .footer-text {
@@ -1324,8 +1329,9 @@ a.active {
 
 
     .footer-text span {
-        font-size: 20px;
+        font-size: 25px;
         /* 폰에서 덜 부담스럽게 */
+
     }
 
     .footer-text {
@@ -1477,10 +1483,10 @@ a.active {
 
 #toTopBtn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    /* height: 90px; */
+    bottom: 28px;
+    right: 28px;
+    width: 62px;
+    height: auto;
     padding: 0;
     border: none;
     background: transparent;
@@ -1512,10 +1518,10 @@ a.active {
 /* 모바일에서 조금 줄이기 */
 @media (max-width: 500px) {
     #toTopBtn {
-        width: 70px;
-        height: 70px;
-        bottom: 18px;
-        right: 3px;
+        width: 55px;
+        height: auto;
+        bottom: 13px;
+        right: 25px;
     }
 }
 
