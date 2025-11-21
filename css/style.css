@@ -311,6 +311,87 @@ video {height: 100%;position: absolute;left: 50%; margin-left: -960px;} */
     }
 }
 
+/* Slide toggle */
+
+#slide_wrap {
+    height: 80px;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    text-align: center;
+    z-index: 99999999;
+    display: flex;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+
+    color: white;
+    font-weight: 800;
+}
+
+.flip {
+    width: 40px;
+    height: 80px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    background: #6ae373;
+    cursor: pointer;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    border-radius: 20px 0 0 20px;
+}
+
+.panel {
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    background: #ffffff;
+    position: relative;
+    float: left;
+    border-radius: 0;
+}
+
+.panel .toggle-img {
+    width: 65px;
+    /* 원하는 이미지 크기로 조절 */
+    height: 65px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    /* 위치도 조절 가능 */
+    left: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.hover-img {
+    position: absolute;
+    top: 10px;
+    /* 위치도 조절 가능 */
+    left: 10px;
+    opacity: 0;
+}
+
+.panel:hover .hover-img {
+    opacity: 1;
+}
+
+.panel:hover .toggle-img:not(.hover-img) {
+    opacity: 0;
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+    .panel:active .hover-img {
+        opacity: 1;
+    }
+
+    .panel:active .toggle-img:not(.hover-img) {
+        opacity: 0;
+    }
+}
+
 
 /* Header
 ==================================================*/
@@ -419,8 +500,6 @@ a.active {
     .dia {
         width: 300px;
         margin: 230px 0 0 200px;
-
-
     }
 
     .dia img {
@@ -548,31 +627,6 @@ a.active {
     right: 76px;
     z-index: 9;
 }
-
-.house {
-    width: 40px;
-    margin-bottom: 15px;
-}
-
-/* .blog {
-    margin-top: 20px;
-}
-
-.blog p {
-    display: inline-block;
-    padding: 5px 20px;
-    border-radius: 30px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    color: #723f86;
-    background-color: #f1d6ff;
-    font-weight: 400;
-}
-
-.blog p:hover {
-    color: white;
-    background-color: #d091e9;
-} */
 
 /* projects section
 ==================================================*/
