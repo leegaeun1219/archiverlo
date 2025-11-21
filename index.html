@@ -32,7 +32,18 @@
             </div>
         </div>
     </div>
-    <!--  프리로더 끝 -->
+
+    <!-- 슬라이드 토글 -->
+
+    <div id="slide_wrap">
+        <div class="flip">Blog</div>
+        <div class="panel">
+            <a href="https://m.blog.naver.com/mimosadelicate?tab=1" target="_blank">
+                <img src="img/sad.png" alt="시무룩덤보" class="toggle-img">
+                <img src="img/happy.png" alt="행복덤보" class="toggle-img hover-img">
+            </a>
+        </div>
+    </div>
 
     <!-- 헤더 시작 -->
     <header class="navbar-fixed-top">
@@ -81,12 +92,6 @@
                         <br>저는 창작의 진정한 가치를 느낍니다.
                     </div>
                 </div>
-                <!-- <p>
-                    <a href="https://m.blog.naver.com/PostList.naver?blogId=mimosadelicate&tab=1">
-                        <img src="img/house.png" alt="#" 치
->
-                    </a>
-                </p> -->
             </div>
 
             <div class="col-md-6 about-img-div">
@@ -135,7 +140,7 @@
                                     <div class="image-container">
                                         <a href="https://drive.google.com/file/d/1eJ0E55wRBbbUzgt5tnAgh6NEcnYrhXQC/view?usp=drive_link"
                                             target="_blank" class="mp">
-                                  
+
                                             <img src="img/portfolio/dvt.png" alt="image" class="img-responsive" />
                                             <div class="overlay-title"><span>Youtube Thumbnail</span></div>
                                         </a>
@@ -402,6 +407,17 @@
 
 
     <!-- 기타 효과들 -->
+
+    <!-- 슬라이드 토글 -->
+    <script>
+        $(function () {
+            $('.panel').hide();
+            $('.flip').click(function () {
+                $('.panel').animate({ width: "toggle" }, 400);
+            });
+        });
+    </script>
+
 
     <!-- 갤러리 라이트 박스 -->
     <div id="gallery-lightbox" class="gallery-lightbox">
